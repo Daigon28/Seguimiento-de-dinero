@@ -8,17 +8,17 @@ class CuentaController extends Controller
 {
     public function index()
     {
-        return("Listado de cuentas");
+        return view("cuentas.index");
     }
 
     public function create()
     {
-        return("Creando las cuentas");
+        return view("cuentas.create");
     }
     
     public function show($cuenta)
     {
-        return("Mostrando la cuenta ".$cuenta);
+        return view("cuentas.show" , ["cuenta" => $cuenta]);
     }
 
 }

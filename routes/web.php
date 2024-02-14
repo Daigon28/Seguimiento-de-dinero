@@ -19,8 +19,9 @@ Route::get('/', function () {
    return("Hola puta");
 });
 
-Route::get('/cuentas', [CuentaController::class, 'index']);
+Route::controller(CuentaController::class)->group(function(){
+   Route::get('/cuentas', 'index');
+   Route::get('/cuentas/create', 'create');
+   Route::get('/cuentas/{cuenta}', 'show');
+});
 
-Route::get('/cuentas/create', [CuentaController::class, 'create']);
-
-Route::get('/cuentas/{cuenta}', [CuentaController::class, 'show']);
