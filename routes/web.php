@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CuentaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   /* return view('welcome');*/
+   return("Hola puta");
 });
+
+Route::get('/cuentas', [CuentaController::class, 'index']);
+
+Route::get('/cuentas/create', [CuentaController::class, 'create']);
+
+Route::get('/cuentas/{cuenta}', [CuentaController::class, 'show']);
