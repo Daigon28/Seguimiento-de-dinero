@@ -4,4 +4,4 @@
 
 @section('content')
     <h1>Listado de cuentas</h1>
-@endsection()
+@endsection
